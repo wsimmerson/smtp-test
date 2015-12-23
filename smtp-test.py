@@ -3,6 +3,7 @@
 import smtplib
 import argparse
 import sys
+import getpass
 
 
 def testmail(username, password, server, deliveryaddr):
@@ -28,7 +29,7 @@ def get_interactive_data():
     data = Data()
 
     data.user = input("Username for SMTP Login: ")
-    data.password = input("\nPassword for SMTP Login: ")
+    data.password = getpass.getpass("\nPassword for SMTP Login: ")
     data.server = input("\nSMTP Server URL: ")
     data.dest = input("\nDestination Email Address: ")
 
